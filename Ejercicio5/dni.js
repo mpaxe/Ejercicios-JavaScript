@@ -31,13 +31,18 @@ function addRow(idTabla) {
 
     var celda1 = fila.insertCell(0);
     var elmento1 = document.createElement("td");
-    elmento1.type = "nombre";
+    elmento1.type = "text";
+    var nombre = document.getElementById("nombre").value;
+    celda1.innerHTML = nombre;
 
     var celda2 = fila.insertCell(1);
     var elmento2 = document.createElement("td");
-    elmento2.type = "apellido";
+    elmento2.type = "text";
+    var nombre = document.getElementById("apellidos").value;
+    celda2.innerHTML = nombre;
 
     var celda3 = fila.insertCell(2);
     var elmento3 = document.createElement("td");
-    elmento1.type = "dni";
+    elmento3.type = "text";
+
 }
