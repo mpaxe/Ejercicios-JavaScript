@@ -1,4 +1,4 @@
-window.onload = function() {
+function newDNI() {
     var cantidadDNI = parseInt(prompt("Indique la cantidad de DNIs a clacular"));
     var DNIs = [];
 
@@ -22,4 +22,22 @@ window.onload = function() {
     })
 
     document.getElementById("dni").innerHTML = JSON.stringify(listaDNIs);
+}
+
+function addRow(idTabla) {
+    var tabla = document.getElementById(idTabla);
+    var numeroFilas = tabla.rows.length;
+    var fila = tabla.insertRow(numeroFilas);
+
+    var celda1 = fila.insertCell(0);
+    var elmento1 = document.createElement("td");
+    elmento1.type = "nombre";
+
+    var celda2 = fila.insertCell(1);
+    var elmento2 = document.createElement("td");
+    elmento2.type = "apellido";
+
+    var celda3 = fila.insertCell(2);
+    var elmento3 = document.createElement("td");
+    elmento1.type = "dni";
 }

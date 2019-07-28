@@ -5,10 +5,30 @@
     <meta charset="utf-8" />
 
     <script src="dni.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-    
+
 <body>
-    <div id="dni"></div>
+    <form action="">
+        <div>
+            Nombre: <input type="text">
+            Apellidos: <input type="text">
+            <input type="button" value="Añadir Persona" onclick="addRow('dataTable');"></input>
+        </div>
+    </form>
+    <br>
+    <div id="dni">
+        <table id="dataTable">
+            <caption>Personas</caption>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>DNI</th>
+            </tr>
+
+        </table>
+    </div>
 </body>
 
 </html>
