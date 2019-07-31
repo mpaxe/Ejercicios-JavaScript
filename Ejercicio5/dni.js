@@ -1,27 +1,15 @@
 function newDNI() {
-    var cantidadDNI = parseInt(prompt("Indique la cantidad de DNIs a clacular"));
-    var DNIs = [];
+    var numDni = parseInt(Math.random()*100000000);
+    var letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+    var letra = letras[numDni%23];
 
-    for(var i = 0; i < cantidadDNI; i++){
-        var numDni = parseInt(Math.random()*100000000);
-        var letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
-        var letra = letras[numDni%23];
+    var dni = numDni+'-'+letra;
 
-        var dni = numDni+'-'+letra;
-
-        while(dni.length < 10){
-            dni = '0'+dni;
-        }
-        
-        DNIs.push(dni);
-
+    while(dni.length < 10){
+        dni = '0'+dni;
     }
 
-    var listaDNIs = DNIs.map(function(elemento){
-        return '<li>'+elemento+'<li>';
-    })
-
-    document.getElementById("dni").innerHTML = JSON.stringify(listaDNIs);
+    return dni;
 }
 
 function addRow(idTabla) {
@@ -44,5 +32,9 @@ function addRow(idTabla) {
     var celda3 = fila.insertCell(2);
     var elmento3 = document.createElement("td");
     elmento3.type = "text";
+    celda3.innerHTML = newDNI();
 
+    document.getElementById("nombre").value = "";
+    document.getElementById("apellidos").value = "";
 }
+
