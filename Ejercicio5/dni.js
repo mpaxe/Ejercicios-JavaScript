@@ -8,7 +8,6 @@ function newDNI() {
     while(dni.length < 10){
         dni = '0'+dni;
     }
-
     return dni;
 }
 
@@ -31,10 +30,16 @@ function addRow(idTabla) {
 
     var celda3 = fila.insertCell(2);
     var elmento3 = document.createElement("td");
+    celda3.id = "dni";
     elmento3.type = "text";
     celda3.innerHTML = newDNI();
 
     document.getElementById("nombre").value = "";
     document.getElementById("apellidos").value = "";
+}
+
+function recuperarDni(){
+    var dni = document.getElementById("dni").innerHTML;
+    console.log(dni);
 }
 
