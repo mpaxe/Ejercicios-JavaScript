@@ -30,7 +30,7 @@ function addRow(idTabla) {
 
     var celda3 = fila.insertCell(2);
     var elmento3 = document.createElement("td");
-    celda3.id = "dni";
+    celda3.id = "dni"+document.getElementById("dataTable").rows.length;
     elmento3.type = "text";
     celda3.innerHTML = newDNI();
 
@@ -38,8 +38,11 @@ function addRow(idTabla) {
     document.getElementById("apellidos").value = "";
 }
 
-function recuperarDni(){
-    var dni = document.getElementById("dni").innerHTML;
-    console.log(dni);
+function recuperarDnis(){
+    var dnis = [];
+    for(var i = 2; i <= document.getElementById("dataTable").rows.length; i++){
+        dnis.push(document.getElementById("dni"+i).innerHTML);
+    }
+    console.log(dnis);
 }
 
